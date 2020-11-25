@@ -128,7 +128,7 @@ class RegistrationView(generic.CreateView):
     model = User
     template_name = 'catalog/registration.html'
     form_class = RegisterUserForm
-    success_url = reverse_lazy('books')
+    success_url = reverse_lazy('home')
     success_msg = 'User created. Congrat!!!'
     
     
