@@ -55,6 +55,7 @@ def register_view(request):
             new_user.set_password(user_form.cleaned_data['password'])
             # Save the User object
             new_user.save()
+            
             return render(request, 'catalog/register_done.html', {'new_user': new_user})
     else:
         user_form = RegisterUserForm()
@@ -127,7 +128,7 @@ class RegistrationView(generic.CreateView):
     model = User
     template_name = 'catalog/registration.html'
     form_class = RegisterUserForm
-    success_url = reverse_lazy('base')
+    success_url = reverse_lazy('books')
     success_msg = 'User created. Congrat!!!'
     
     
